@@ -20,11 +20,11 @@ jobs:
   include:
     - stage: build
       os: linux
-      dist: xenial
+      dist: trusty
       jdk: oraclejdk8
     - stage: build
       os: linux
-      dist: xenial
+      dist: trusty
       jdk: openjdk8
     - stage: build
       os: linux
