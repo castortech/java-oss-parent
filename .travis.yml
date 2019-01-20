@@ -41,6 +41,8 @@ jobs:
             gpg --import .travis.gpg
             cp .travis.settings.xml $HOME/.m2/settings.xml
             mvn clean deploy -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -P sign -B -V -e
+          on:
+            tags: true
           skip_cleanup: true
         - provider: releases
           api_key:
@@ -49,6 +51,8 @@ jobs:
           file:
             - $HOME/.m2/repository/io/oddsource/java/oss-parent/*/oss-parent-*.pom
             - $HOME/.m2/repository/io/oddsource/java/oss-parent/*/oss-parent-*.pom.asc
+          on:
+            tags: true
 stages:
   - build
   - name: deploy
