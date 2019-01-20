@@ -74,6 +74,7 @@
 	</contributors>
 
 	<properties>
+		<gpg.keyname>5224F049F154E1FAA46C13C37B440CA3BEB1A41F</gpg.keyname>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<sonatypeOssRepositoryBaseUrl>https://oss.sonatype.org/</sonatypeOssRepositoryBaseUrl>
@@ -185,7 +186,8 @@
 							<arg>- -pinentry-mode</arg>
 							<arg>loopback</arg>
 						</gpgArguments>-->
-						<keyname>5224F049F154E1FAA46C13C37B440CA3BEB1A41F</keyname>
+						<keyname>${gpg.keyname}</keyname>
+						<passphraseServerId>${gpg.keyname}</passphraseServerId>
 					</configuration>
 				</plugin>
 				<plugin>
