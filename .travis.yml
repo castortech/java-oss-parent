@@ -35,12 +35,12 @@ jobs:
       jdk: openjdk8
       deploy:
         - provider: script
-          script: |
-            openssl aes-256-cbc -K $encrypted_dc2adf587a89_key -iv $encrypted_dc2adf587a89_iv -in .travis.gpg.enc -out .travis.gpg -d
-            openssl aes-256-cbc -K $encrypted_dc2adf587a89_key -iv $encrypted_dc2adf587a89_iv -in .travis.settings.xml.enc -out .travis.settings.xml -d
-            gpg --import .travis.gpg
-            cp .travis.settings.xml $HOME/.m2/settings.xml
-            mvn clean deploy -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -P sign -B -V -e
+          script:
+            - openssl aes-256-cbc -K $encrypted_dc2adf587a89_key -iv $encrypted_dc2adf587a89_iv -in .travis.gpg.enc -out .travis.gpg -d
+            - openssl aes-256-cbc -K $encrypted_dc2adf587a89_key -iv $encrypted_dc2adf587a89_iv -in .travis.settings.xml.enc -out .travis.settings.xml -d
+            - gpg --import .travis.gpg
+            - cp .travis.settings.xml $HOME/.m2/settings.xml
+            - mvn clean deploy -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -P sign -B -V -e
           on:
             tags: true
           skip_cleanup: true
