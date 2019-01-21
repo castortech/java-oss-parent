@@ -27,14 +27,15 @@ Java projects sponsored and hosted by OddSource Code must put the following at t
 Coding Standards
 ----------------
 
-At OddSource Code, we abide by the following conventions for all Java and XML code:
+At OddSource Code, we abide by the following conventions for all Java and XML code. This is a general overview. For
+full code styling rules, see the Checkstyle config in ``pom.xml``.
 
-* Use tabs, not spaces. The exception to this rule is ReStructuredText files, which must use spaces to function
-  properly (including code samples in RST files).
+* Use spaces, not tabs, always and everywhere.
 * Opening curly braces go on a new line.
 * Logic branches always use curly braces.
 * Put spaces before all opening parenthesis except annotation parameters and method definitions.
 * Put spaces around all operators except unary and reference operators.
+* When wrapping statements, operators go at the end of the line, not at the beginning of the new line.
 * When wrapping method definition arguments and invocation parameters, each argument must go on a separate line,
   indented one tab more than the method definition or invocation (not aligned with the opening parenthesis). The
   closing parenthesis goes on its own line, aligned with the method definition or invocation.
