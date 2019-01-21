@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0 (2019-01-??)
+2.0 (2019-01-21)
 -------------------
 - [MAJOR] Re-branded all projects from NWTSJavaCode to OddSource Code
 - [MAJOR] Switched to using Travis CI for all continuous integration
