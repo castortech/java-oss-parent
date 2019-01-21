@@ -488,7 +488,7 @@
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${version.plugin.nexus}</version>
                     <configuration>
-                        <serverId>oddsource-sonatype-server</serverId>
+                        <serverId>ossrh</serverId>
                         <nexusUrl>${sonatypeOssRepositoryBaseUrl}</nexusUrl>
                         <stagingProfileId>923db7f780e30f</stagingProfileId>
                     </configuration>
