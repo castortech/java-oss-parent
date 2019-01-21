@@ -3,9 +3,12 @@ Changelog
 
 2.0 (2019-01-??)
 -------------------
-- [MAJOR] Re-branding all projects from NWTSJavaCode to OddSource Code
-- [MAJOR] Switching to using Travis CI for all continuous integration
-- [MAJOR] Switching to the `nexus-staging-maven-plugin` for deployments instead of `maven-deploy-plugin`
+- [MAJOR] Re-branded all projects from NWTSJavaCode to OddSource Code
+- [MAJOR] Switched to using Travis CI for all continuous integration
+- [MAJOR] Switched to the `nexus-staging-maven-plugin` for deployments instead of `maven-deploy-plugin`
+- [MAJOR] Switched from tabs to spaces
+- [MINOR] Codified explicit code style rules
+- [MINOR] Configured mandatory license header check in Maven build
 
 1.1 (2013-04-24)
 ----------------
