@@ -80,7 +80,9 @@
         <sonatypeOssRepositoryBaseUrl>https://oss.sonatype.org/</sonatypeOssRepositoryBaseUrl>
         <sonatypeOssRepositorySnapshotUrl>https://oss.sonatype.org/content/repositories/snapshots</sonatypeOssRepositorySnapshotUrl>
         <sonatypeOssRepositoryStagingUrl>https://oss.sonatype.org/service/local/staging/deploy/maven2</sonatypeOssRepositoryStagingUrl>
+        <version.plugin.checkstyle>3.0.0</version.plugin.checkstyle>
         <version.plugin.checksum>1.8</version.plugin.checksum>
+        <version.plugin.deploy>2.8.2</version.plugin.deploy>
         <version.plugin.enforcer>1.4.1</version.plugin.enforcer>
         <version.plugin.gpg>1.6</version.plugin.gpg>
         <version.plugin.install>2.5.2</version.plugin.install>
@@ -137,6 +139,7 @@
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
                     <version>${version.plugin.spotbugs}</version>
+                    <inherited>true</inherited>
                     <configuration>
                         <effort>Max</effort>
                         <threshold>Low</threshold>
@@ -154,6 +157,7 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>${version.plugin.enforcer}</version>
+                    <inherited>true</inherited>
                     <executions>
                         <execution>
                             <id>enforce-maven</id>
@@ -177,7 +181,8 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>${version.plugin.checkstyle}</version>
+                    <inherited>true</inherited>
                     <dependencies>
                         <dependency>
                             <groupId>com.puppycrawl.tools</groupId>
@@ -220,7 +225,9 @@
                                         <property name="separateLineBetweenGroups" value="true" />
                                         <property name="sortImportsInGroupAlphabetically" value="true" />
                                     </module>
-                                    <module name="DeclarationOrder" />
+                                    <module name="DeclarationOrder">
+                                        <!--Static variables, instance variables, constructors, methods-->
+                                    </module>
                                     <module name="DefaultComesLast" />
                                     <module name="EmptyBlock" />
                                     <module name="EmptyCatchBlock">
@@ -367,7 +374,9 @@
                                     <module name="VisibilityModifier">
                                         <property name="allowPublicImmutableFields" value="true" />
                                     </module>
-                                    <module name="WhitespaceAfter" />
+                                    <module name="WhitespaceAfter">
+                                        <property name="tokens" value="COMMA,SEMI,TYPECAST"/>
+                                    </module>
                                 </module>
                             </module>
                         </checkstyleRules>
@@ -396,6 +405,7 @@
                     <groupId>com.mycila</groupId>
                     <artifactId>license-maven-plugin</artifactId>
                     <version>${version.plugin.license}</version>
+                    <inherited>true</inherited>
                     <configuration>
                         <excludes>
                             <exclude>**/*.rst</exclude>
@@ -424,6 +434,7 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>${version.plugin.gpg}</version>
+                    <inherited>true</inherited>
                     <configuration>
                         <!--Uncomment the following (and remove the extra space between hyphens) for GnuPG >= 2.1-->
                         <!--<gpgArguments>
@@ -450,6 +461,7 @@
                     <groupId>net.nicoulaj.maven.plugins</groupId>
                     <artifactId>checksum-maven-plugin</artifactId>
                     <version>${version.plugin.checksum}</version>
+                    <inherited>true</inherited>
                     <configuration>
                         <algorithms>
                             <algorithm>MD5</algorithm>
@@ -472,6 +484,7 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
                     <version>${version.plugin.install}</version>
+                    <inherited>true</inherited>
                     <configuration>
                         <createChecksum>true</createChecksum>
                     </configuration>
@@ -479,6 +492,8 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${version.plugin.deploy}</version>
+                    <inherited>true</inherited>
                     <configuration>
                         <skip>true</skip>
                     </configuration>
@@ -487,6 +502,7 @@
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${version.plugin.nexus}</version>
+                    <inherited>true</inherited>
                     <configuration>
                         <serverId>ossrh</serverId>
                         <nexusUrl>${sonatypeOssRepositoryBaseUrl}</nexusUrl>
