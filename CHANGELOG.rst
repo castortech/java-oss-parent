@@ -1,8 +1,12 @@
 Changelog
 =========
 
+2.1 (20??-??-??)
+----------------
+- Nothing yet
+
 2.0 (2019-01-21)
--------------------
+----------------
 - [MAJOR] Re-branded all projects from NWTSJavaCode to OddSource Code
 - [MAJOR] Switched to using Travis CI for all continuous integration
 - [MAJOR] Switched to the `nexus-staging-maven-plugin` for deployments instead of `maven-deploy-plugin`
