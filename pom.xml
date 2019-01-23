@@ -201,10 +201,10 @@
                                 <module name="NewlineAtEndOfFile" />
                                 <module name="TreeWalker">
                                     <module name="AbbreviationAsWordInName">
-                                        <property name="ignoreFinal" value="false" />
-                                        <property name="ignoreStatic" value="false" />
+                                        <property name="ignoreFinal" value="true" />
+                                        <property name="ignoreStatic" value="true" />
                                         <property name="allowedAbbreviationLength" value="0" />
-                                        <property name="allowedAbbreviations" value="CSV,HTML,TSV,URI,URL,XML,YML,YAML" />
+                                        <property name="allowedAbbreviations" value="CSV,DSA,FTP,HTML,HTTP,HTTPS,IP,RSA,SCP,SFTP,SMTP,SMTPS,SSH,TCP,TSV,UDP,UID,URI,URL,XML,YML,YAML" />
                                     </module>
                                     <module name="AnnotationLocation">
                                         <property name="allowSamelineMultipleAnnotations" value="false" />
@@ -213,7 +213,9 @@
                                     </module>
                                     <module name="AnonInnerLength" />
                                     <module name="ArrayTrailingComma" />
-                                    <module name="AtclauseOrder" />
+                                    <module name="AtclauseOrder">
+                                        <property name="tagOrder" value="@param,@return,@throws,@exception,@see,@serial,@serialField,@serialData,@deprecated,@author,@version,@since"/>
+                                    </module>
                                     <module name="AvoidNestedBlocks" />
                                     <module name="AvoidStarImport" />
                                     <module name="AvoidStaticImport" />
@@ -233,7 +235,9 @@
                                     <module name="EmptyCatchBlock">
                                         <property name="exceptionVariableName" value="expected|ignore" />
                                     </module>
-                                    <module name="EmptyLineSeparator" />
+                                    <module name="EmptyLineSeparator">
+                                        <property name="tokens" value="CLASS_DEF,CTOR_DEF,ENUM_DEF,IMPORT,INSTANCE_INIT,INTERFACE_DEF,METHOD_DEF,STATIC_IMPORT,STATIC_INIT,VARIABLE_DEF" />
+                                    </module>
                                     <module name="EmptyStatement" />
                                     <module name="EqualsAvoidNull" />
                                     <module name="EqualsHashCode" />
@@ -389,6 +393,7 @@
                         <includeTestSourceDirectory>true</includeTestSourceDirectory>
                         <logViolationsToConsole>true</logViolationsToConsole>
                         <resourceIncludes>**\/*.properties</resourceIncludes>
+                        <suppressionsLocation>build/checkstyle-suppressions.xml</suppressionsLocation>
                         <violationSeverity>warning</violationSeverity>
                     </configuration>
                     <executions>
@@ -408,12 +413,22 @@
                     <inherited>true</inherited>
                     <configuration>
                         <excludes>
+                            <exclude>**/*.enc</exclude>
+                            <exclude>**/*.key</exclude>
                             <exclude>**/*.rst</exclude>
                             <exclude>**/*.txt</exclude>
                             <exclude>**/.gitkeep</exclude>
-                            <exclude>.travis.*</exclude>
                         </excludes>
                         <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+                        <mapping>
+                            <c>SLASHSTAR_STYLE</c>
+                            <cpp>SLASHSTAR_STYLE</cpp>
+                            <groovy>SLASHSTAR_STYLE</groovy>
+                            <h>SLASHSTAR_STYLE</h>
+                            <java>SLASHSTAR_STYLE</java>
+                            <yaml>SCRIPT_STYLE</yaml>
+                            <yml>SCRIPT_STYLE</yml>
+                        </mapping>
                         <properties>
                             <owner>OddSource Code</owner>
                             <email>license@oddsource.io</email>
