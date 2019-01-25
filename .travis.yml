@@ -91,3 +91,4 @@ stages:
 install:
   - gpg --version
 script:
+  - mvn --version
