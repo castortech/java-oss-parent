@@ -8,7 +8,7 @@ OddSource OSS Parent
     :target: https://github.com/OddSource/java-oss-parent/blob/master/LICENSE.txt
 
 .. image:: https://img.shields.io/maven-central/v/io.oddsource.java/oss-parent.svg
-    :target: https://search.maven.org/artifact/io.oddsource.java/oss-parent/
+    :target: https://search.maven.org/search?q=g:io.oddsource.java%20AND%20a:oss-parent&core=gav
 
 .. image:: https://img.shields.io/github/release/OddSource/java-oss-parent/all.svg
     :target: https://github.com/OddSource/java-oss-parent/releases
