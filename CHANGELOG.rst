@@ -1,10 +1,14 @@
 Changelog
 =========
 
+2.2 (2019-01-26)
+----------------
+- [MINOR] Some improvements to support needs of Raw Sockets
+
 2.1 (2019-01-25)
 ----------------
-- [MINOR] Some improvements to the Checkstyle configuration to better align with the code style we're looking for.
-- [MINOR] Improvements to the Travis build based on feedback from the folks at Travis.
+- [MINOR] Some improvements to the Checkstyle configuration to better align with the code style we're looking for
+- [MINOR] Improvements to the Travis build based on feedback from the folks at Travis
 
 2.0 (2019-01-21)
 ----------------
