@@ -25,7 +25,7 @@
     <packaging>pom</packaging>
 
     <name>OddSource OSS Parent</name>
-    <version>2.1</version>
+    <version>2.2-SNAPSHOT</version>
     <description>
         Parent POM for all OddSource Java Code projects.
     </description>
@@ -424,19 +424,25 @@
                     <inherited>true</inherited>
                     <configuration>
                         <excludes>
+                            <exclude>**/*.dylib</exclude>
                             <exclude>**/*.enc</exclude>
                             <exclude>**/*.key</exclude>
+                            <exclude>**/*.lib</exclude>
                             <exclude>**/*.rst</exclude>
                             <exclude>**/*.txt</exclude>
                             <exclude>**/.gitkeep</exclude>
+                            <exclude>**/io_oddsource_java*.h</exclude><!--Auto-generated JNI headers-->
                         </excludes>
                         <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
                         <mapping>
                             <c>SLASHSTAR_STYLE</c>
                             <cpp>SLASHSTAR_STYLE</cpp>
+                            <Dockerfile-jdk8>SCRIPT_STYLE</Dockerfile-jdk8>
+                            <Dockerfile-jdk11>SCRIPT_STYLE</Dockerfile-jdk11>
                             <groovy>SLASHSTAR_STYLE</groovy>
                             <h>SLASHSTAR_STYLE</h>
                             <java>SLASHSTAR_STYLE</java>
+                            <Makefile>SCRIPT_STYLE</Makefile>
                             <yaml>SCRIPT_STYLE</yaml>
                             <yml>SCRIPT_STYLE</yml>
                         </mapping>
